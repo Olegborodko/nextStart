@@ -1,36 +1,14 @@
-import Link from "next/link";
+import A from "../components/A";
 
 const Index = () => {
   return (
     <>
       <div className="navBar">
-        <Link href="/" className="app-subnav__link">
-          Main
-        </Link>
+        <A href="/" text="Main"/>
         <br />
-        <Link href="/users" className="app-subnav__link">
-          Users
-        </Link>
+        <A href="/" text="Users"/>
       </div>
       <h1>Main page</h1>
-      <style jsx>
-        {`
-          .navBar {
-            background: orange;
-          }
-          .app-subnav__link{
-            background: blue;
-            text-decoration: none;
-            font-size: 30px;
-          }
-        `}
-      </style>
-      <style jsx global>{`
-        html, body {
-          margin: 0;
-          padding: 0;
-        }
-      `}</style>
     </>
   );
 };
