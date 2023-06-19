@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { useState } from "react";
+import styles from "../styles/users.module.scss";
 
 const Users = () => {
   const [users, setUsers] = useState([
@@ -8,7 +9,7 @@ const Users = () => {
   ]);
   return (
     <>
-      <h1>Users page</h1>
+      <h1 className={styles.user}>Users page</h1>
       <ul>
         {users.map(user =>
           <li key={user.id}>

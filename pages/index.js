@@ -6,7 +6,7 @@ const Index = () => {
       <div className="navBar">
         <A href="/" text="Main"/>
         <br />
-        <A href="/" text="Users"/>
+        <A href="/users" text="Users"/>
       </div>
       <h1>Main page</h1>
     </>
