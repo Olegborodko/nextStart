@@ -1,0 +1,3 @@
+npm init -y
+
+npm i next react react-dom
