@@ -2,22 +2,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import styles from "../styles/users.module.scss";
 
-const Users = () => {
-  const [users, setUsers] = useState([
-    { id: 1, name: 'petya' },
-    { id: 2, name: 'vasya' },
-  ]);
-
-  useEffect(() => {
-    async function fetchData() {
-      const response = await fetch('https://my-json-server.typicode.com/typicode/demo/posts');
-      const data = await response.json();
-      console.log(data);
-      setUsers(data);
-    };
-
-    fetchData();
-  }, []);
+const Users = ({users}) => {
 
   return (
     <>
@@ -36,3 +21,14 @@ const Users = () => {
 };
 
 export default Users;
+
+export async function getStaticProps() {
+  const response = await fetch('https://my-json-server.typicode.com/typicode/demo/posts');
+  const users = await response.json();
+
+  return {
+    props: {
+      users
+    },
+  }
+}
