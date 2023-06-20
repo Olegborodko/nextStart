@@ -1,20 +1,10 @@
-import Head from "next/head";
-import A from "../components/A";
+import MainContainer from "../components/MainContainer";
 
 const Index = () => {
   return (
-    <>
-      <Head>
-        <title>Main page</title>
-        <meta keywords="next start, meta tag"></meta>
-      </Head>
-      <div className="navBar">
-        <A href="/" text="Main" />
-        <br />
-        <A href="/users" text="Users" />
-      </div>
+    <MainContainer>
       <h1>Main page</h1>
-    </>
+    </MainContainer>
   );
 };
 

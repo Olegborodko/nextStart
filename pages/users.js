@@ -1,11 +1,11 @@
 import Link from "next/link";
-import { useEffect, useState } from "react";
 import styles from "../styles/users.module.scss";
+import MainContainer from "../components/MainContainer";
 
-const Users = ({users}) => {
+const Users = ({ users }) => {
 
   return (
-    <>
+    <MainContainer keywords={"users"}>
       <h1 className={styles.user}>Users page</h1>
       <ul>
         {users.map(user =>
@@ -16,7 +16,7 @@ const Users = ({users}) => {
           </li>
         )}
       </ul>
-    </>
+    </MainContainer>
   );
 };
 
