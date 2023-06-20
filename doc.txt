@@ -3,3 +3,9 @@ npm init -y
 npm i next react react-dom
 
 npm i sass
+
+тестовый сервер
+https://my-json-server.typicode.com/
+
+видео next js быстрый курс
+https://www.youtube.com/watch?v=Onn38VeEAC8

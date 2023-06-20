@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "../styles/users.module.scss";
 
 const Users = () => {
@@ -7,6 +7,18 @@ const Users = () => {
     { id: 1, name: 'petya' },
     { id: 2, name: 'vasya' },
   ]);
+
+  useEffect(() => {
+    async function fetchData() {
+      const response = await fetch('https://my-json-server.typicode.com/typicode/demo/posts');
+      const data = await response.json();
+      console.log(data);
+      setUsers(data);
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <>
       <h1 className={styles.user}>Users page</h1>
@@ -14,7 +26,7 @@ const Users = () => {
         {users.map(user =>
           <li key={user.id}>
             <Link href={`/users/${user.id}`}>
-              {user.name}
+              {user.title}
             </Link>
           </li>
         )}
